@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+    <queries><package android:name="com.samsung.android.calendar"/></queries>
+    <application android:label="@string/app_name" android:icon="@android:drawable/ic_menu_today"
+        android:theme="@android:style/Theme.DeviceDefault.Light">
+        <activity android:name=".MainActivity" android:exported="true">
+            <intent-filter><action android:name="android.intent.action.MAIN"/><category android:name="android.intent.category.LAUNCHER"/></intent-filter>
+        </activity>
+        <activity android:name=".ConfigActivity" android:exported="true">
+            <intent-filter><action android:name="android.appwidget.action.APPWIDGET_CONFIGURE"/></intent-filter>
+        </activity>
+        <receiver android:name=".ClockW21" android:exported="true" android:label="Saat 2x1">
+            <intent-filter><action android:name="android.appwidget.action.APPWIDGET_UPDATE"/></intent-filter>
+            <meta-data android:name="android.appwidget.provider" android:resource="@xml/info_clock_21"/>
+        </receiver>
+        <receiver android:name=".ClockW22" android:exported="true" android:label="Saat 2x2">
+            <intent-filter><action android:name="android.appwidget.action.APPWIDGET_UPDATE"/></intent-filter>
+            <meta-data android:name="android.appwidget.provider" android:resource="@xml/info_clock_22"/>
+        </receiver>
+        <receiver android:name=".ClockW31" android:exported="true" android:label="Saat 3x1">
+            <intent-filter><action android:name="android.appwidget.action.APPWIDGET_UPDATE"/></intent-filter>
+            <meta-data android:name="android.appwidget.provider" android:resource="@xml/info_clock_31"/>
+        </receiver>
+        <receiver android:name=".ClockW32" android:exported="true" android:label="Saat 3x2">
+            <intent-filter><action android:name="android.appwidget.action.APPWIDGET_UPDATE"/></intent-filter>
+            <meta-data android:name="android.appwidget.provider" android:resource="@xml/info_clock_32"/>
+        </receiver>
+        <receiver android:name=".WeatherW21" android:exported="true" android:label="Hava Durumu 2x1">
+            <intent-filter><action android:name="android.appwidget.action.APPWIDGET_UPDATE"/></intent-filter>
+            <meta-data android:name="android.appwidget.provider" android:resource="@xml/info_weather_21"/>
+        </receiver>
+        <receiver android:name=".WeatherW22" android:exported="true" android:label="Hava Durumu 2x2">
+            <intent-filter><action android:name="android.appwidget.action.APPWIDGET_UPDATE"/></intent-filter>
+            <meta-data android:name="android.appwidget.provider" android:resource="@xml/info_weather_22"/>
+        </receiver>
+        <receiver android:name=".WeatherW31" android:exported="true" android:label="Hava Durumu 3x1">
+            <intent-filter><action android:name="android.appwidget.action.APPWIDGET_UPDATE"/></intent-filter>
+            <meta-data android:name="android.appwidget.provider" android:resource="@xml/info_weather_31"/>
+        </receiver>
+        <receiver android:name=".WeatherW32" android:exported="true" android:label="Hava Durumu 3x2">
+            <intent-filter><action android:name="android.appwidget.action.APPWIDGET_UPDATE"/></intent-filter>
+            <meta-data android:name="android.appwidget.provider" android:resource="@xml/info_weather_32"/>
+        </receiver>
+        <receiver android:name=".LinkW21" android:exported="true" android:label="Link 2x1">
+            <intent-filter><action android:name="android.appwidget.action.APPWIDGET_UPDATE"/></intent-filter>
+            <meta-data android:name="android.appwidget.provider" android:resource="@xml/info_link_21"/>
+        </receiver>
+        <receiver android:name=".LinkW22" android:exported="true" android:label="Link 2x2">
+            <intent-filter><action android:name="android.appwidget.action.APPWIDGET_UPDATE"/></intent-filter>
+            <meta-data android:name="android.appwidget.provider" android:resource="@xml/info_link_22"/>
+        </receiver>
+        <receiver android:name=".LinkW31" android:exported="true" android:label="Link 3x1">
+            <intent-filter><action android:name="android.appwidget.action.APPWIDGET_UPDATE"/></intent-filter>
+            <meta-data android:name="android.appwidget.provider" android:resource="@xml/info_link_31"/>
+        </receiver>
+        <receiver android:name=".LinkW32" android:exported="true" android:label="Link 3x2">
+            <intent-filter><action android:name="android.appwidget.action.APPWIDGET_UPDATE"/></intent-filter>
+            <meta-data android:name="android.appwidget.provider" android:resource="@xml/info_link_32"/>
+        </receiver>
+        <receiver android:name=".DateW22" android:exported="true" android:label="Tarih Takvim 2x2">
+            <intent-filter><action android:name="android.appwidget.action.APPWIDGET_UPDATE"/></intent-filter>
+            <meta-data android:name="android.appwidget.provider" android:resource="@xml/info_date_22"/>
+        </receiver>
+    </application>
+</manifest>
