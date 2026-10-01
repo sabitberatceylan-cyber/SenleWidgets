@@ -141,10 +141,10 @@ object U {
         rv.setTextColor(R.id.month, col(P.s(c, id, "headtext", "#FFFFFF"), Color.WHITE))
         val tc = col(P.s(c, id, "text", "#222222"), Color.BLACK)
         rv.setTextColor(R.id.day, tc); rv.setTextColor(R.id.weekday, tc)
-        var i = c.packageManager.getLaunchIntentForPackage("com.samsung.android.calendar")
-        if (i == null) i = Intent.makeMainSelectorActivity(Intent.ACTION_MAIN, Intent.CATEGORY_APP_CALENDAR)
-        i.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
-        rv.setOnClickPendingIntent(R.id.root, pi(c, id, i))
+        val launchIntent = c.packageManager.getLaunchIntentForPackage("com.samsung.android.calendar")
+            ?: Intent(Intent.ACTION_MAIN).apply { addCategory(Intent.CATEGORY_APP_CALENDAR) }
+        launchIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
+        rv.setOnClickPendingIntent(R.id.root, pi(c, id, launchIntent))
         return rv
     }
 }
